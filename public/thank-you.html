@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Gracias! - Torre en La Esperilla</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16944173841"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16944173841');
+      
+      // Evento de conversión - Configura tu etiqueta de conversión aquí
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16944173841/XXXXX' // Reemplaza XXXXX con tu etiqueta de conversión
+      });
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #0c1839;
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col justify-center items-center bg-[#0c1839] text-white">
+    <div class="bg-blue-900/80 rounded-2xl shadow-2xl p-10 border-2 border-[#F97316]/50 max-w-lg w-full mx-4 text-center">
+      <h1 class="text-4xl font-bold text-[#F97316] mb-6" style="font-family: 'Playfair Display', serif;">¡Gracias!</h1>
+      <svg class="w-20 h-20 mx-auto text-green-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="text-lg text-gray-200 mb-8">Uno de nuestros asesores le estará contactando lo más pronto posible.</p>
+      <a href="/" class="mt-4 bg-[#F97316] text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors inline-block">Volver al inicio</a>
+    </div>
+    
+    <footer class="mt-12 text-gray-400 text-sm">
+      <p>&copy; 2025 Alveare Realty. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

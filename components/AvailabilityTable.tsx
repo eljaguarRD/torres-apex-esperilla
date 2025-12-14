@@ -5,7 +5,7 @@ import type { AvailabilityUnit } from '../types';
 const units: AvailabilityUnit[] = [
     { unit: 'A5', rooms: '3 + Estudio', area: 165, parking: 2, price: '$406,000' },
     { unit: 'B5', rooms: '2', area: 102, parking: 2, price: '$263,000' },
-    { unit: 'C5', rooms: '2', area: 93, parking: 2, price: '$330,000' },
+    { unit: 'C5', rooms: '2', area: 93, parking: 2, price: '$243,000' },
     { unit: 'D5', rooms: '2 + Estudio', area: 121, parking: 2, price: '$330,000' },
     { unit: 'E5', rooms: '3', area: 127, parking: 2, price: '$320,000' },
     { unit: 'F5', rooms: '2', area: 105, parking: 2, price: '$278,000' },

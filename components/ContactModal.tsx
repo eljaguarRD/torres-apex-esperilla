@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -15,6 +16,7 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzL9usRdV7OQtmYXRG3o
 
 // FIX: Correctly type the component props using React.FC<ContactModalProps>
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -90,14 +92,14 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
       const result = await response.json();
 
       if (result.result === 'success') {
-        setIsSubmitted(true);
+        // Redirigir directamente a la página de agradecimiento
+        window.location.href = '/thank-you.html';
       } else {
         throw new Error(result.message || 'Ocurrió un error desconocido.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitError('No se pudo enviar el formulario. Por favor, inténtelo de nuevo más tarde.');
-    } finally {
       setIsSubmitting(false);
     }
   };
