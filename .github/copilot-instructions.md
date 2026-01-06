@@ -1,86 +1,42 @@
-# Copilot Instructions - Torres Apex Esperilla
+# MBOS369 Commands
 
-## Descripción del Proyecto
-Landing page de bienes raíces para promocionar apartamentos en La Esperilla, Santo Domingo. Es un sitio estático React/Vite con formulario de contacto conectado a Google Apps Script.
+Este proyecto está conectado al ecosistema MBOS369. Los siguientes comandos son OBLIGATORIOS de ejecutar cuando el usuario los invoque:
 
-## Stack Tecnológico
-- **Framework**: React 18 + TypeScript + Vite
-- **Estilos**: Tailwind CSS con tema oscuro (`#0c1839` como color base)
-- **Routing**: React Router DOM v6
-- **Backend**: Google Apps Script (para formularios)
+## /neural scan
+**Cuándo**: Inicio de sesión
+**Acción**: 
+1. Leer `.mbos/HANDOFF.md` para entender el estado actual
+2. Leer `.mbos/MEMORY.md` para conocer decisiones pasadas
+3. Resumir al usuario qué hay pendiente y qué se hizo antes
 
-## Comandos de Desarrollo
-```bash
-npm install    # Instalar dependencias
-npm run dev    # Servidor de desarrollo (Vite)
-npm run build  # Build de producción
-npm run preview # Preview del build
+## /commit wisdom
+**Cuándo**: Fin de sesión
+**Acción**:
+1. Actualizar `.mbos/MEMORY.md` agregando nuevos patrones aprendidos (NUNCA borrar contenido anterior)
+2. Actualizar `.mbos/HANDOFF.md` con el estado actual para continuar mañana
+3. Hacer `git add -A && git commit -m "🧠 /commit wisdom - [descripción]" && git push`
+4. Confirmar al usuario que todo está guardado
+
+## /handoff
+**Cuándo**: Transferir contexto a otra sesión/persona
+**Acción**: Mostrar resumen completo del estado actual basado en `.mbos/HANDOFF.md`
+
+## /status check
+**Cuándo**: Cualquier momento
+**Acción**: Mostrar estado actual del proyecto y tareas pendientes
+
+---
+
+## Archivos de Memoria
+
+```
+.mbos/
+├── BRAIN.md    # Reglas permanentes (solo agregar)
+├── MEMORY.md   # Log de sesiones (NUNCA borrar)
+└── HANDOFF.md  # Estado actual (reescribir cada sesión)
 ```
 
-## Arquitectura y Estructura
-
-### Punto de Entrada
-- [index.tsx](../index.tsx) → monta `<App />` en el DOM
-- [App.tsx](../App.tsx) → configura React Router con rutas `/` y `/thank-you`
-
-### Componentes Principales (en `components/`)
-| Componente | Propósito |
-|------------|-----------|
-| `Header.tsx` | Hero con título y descripción del proyecto |
-| `LocationSection.tsx` | Galería de imágenes con `ImageCarousel` |
-| `ApartmentTypesSection.tsx` | Grid de tipos de apartamentos (A-G) |
-| `AmenitiesSection.tsx` | Lista de amenidades del edificio |
-| `AvailabilityTable.tsx` | Tabla de unidades disponibles con precios |
-| `ContactSection.tsx` + `ContactModal.tsx` | Formulario de contacto |
-| `SideMenu.tsx` + `MenuButton.tsx` | Navegación móvil tipo drawer |
-
-### Patrones de Datos
-- Los tipos se definen en [types.ts](../types.ts): `ApartmentType`, `AvailabilityUnit`
-- Los datos de apartamentos están hardcodeados en `ApartmentTypesSection.tsx` y `AvailabilityTable.tsx`
-- Las imágenes usan URLs externas de `postimg.cc`
-
-## Convenciones de Código
-
-### Componentes React
-```tsx
-// Patrón estándar: React.FC con interface Props
-interface ComponentNameProps {
-  prop: Type;
-  onAction: () => void;
-}
-
-const ComponentName: React.FC<ComponentNameProps> = ({ prop, onAction }) => {
-  // ...
-};
-
-export default ComponentName;
-```
-
-### Estilos con Tailwind
-- **Color primario**: `#F97316` (naranja) para CTAs, títulos y acentos
-- **Fondo base**: `#0c1839` (azul oscuro)
-- **Fondos secundarios**: `bg-blue-900/50`, `bg-blue-900/30` con backdrop-blur
-- **Bordes decorativos**: `border-[#F97316]/50`, `border-blue-700/50`
-- **Tipografía**: `font-sans` (Inter) para cuerpo, `font-serif` (Playfair Display) para headings
-
-### Modales
-- Usan overlay con `bg-black/80 backdrop-blur-sm`
-- Implementan cierre con tecla Escape via `useEffect`
-- Bloquean scroll del body cuando están abiertos (manejado en `App.tsx`)
-
-## Integraciones Externas
-
-### Google Apps Script (Formulario de Contacto)
-El formulario en `ContactModal.tsx` envía datos a:
-```
-SCRIPT_URL = 'https://script.google.com/macros/s/.../exec'
-```
-- Método: POST con `Content-Type: text/plain`
-- Payload: `{ name, email, phone }`
-- Redirige a `/thank-you.html` en éxito
-
-## Notas Importantes
-- El contenido está en español (mercado dominicano)
-- Las imágenes están hosteadas externamente - no hay assets locales
-- Existe `public/thank-you.html` como fallback estático además del componente React
-- El proyecto fue generado originalmente con AI Studio (ver README)
+## Proyecto: Torres Apex Esperilla
+- **Stack**: React + Vite + TypeScript + Tailwind
+- **Función**: Landing page inmobiliaria para proyecto de apartamentos
+- **Owner**: eljaguarRD
