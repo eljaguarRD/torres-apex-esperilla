@@ -9,18 +9,16 @@ import Footer from './components/Footer';
 import ContactSection from './components/ContactSection';
 import MenuButton from './components/MenuButton';
 import SideMenu from './components/SideMenu';
-import ContactModal from './components/ContactModal';
 import ApartmentModal from './components/ApartmentModal';
 import ThankYou from './ThankYou';
 import type { ApartmentType } from './types';
 
 const MainApp: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isContactModalOpen, setIsContactModalOpen] = React.useState(false);
   const [selectedApartment, setSelectedApartment] = React.useState<ApartmentType | null>(null);
 
   React.useEffect(() => {
-    const isModalOpen = isContactModalOpen || !!selectedApartment;
+    const isModalOpen = !!selectedApartment;
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -29,7 +27,7 @@ const MainApp: React.FC = () => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isContactModalOpen, selectedApartment]);
+  }, [selectedApartment]);
 
   return (
     <div className="bg-[#0c1839] text-white font-sans overflow-x-hidden relative">
@@ -52,7 +50,6 @@ const MainApp: React.FC = () => {
       </div>
       <MenuButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
       <SideMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
       {selectedApartment && (
         <ApartmentModal 
           apartment={selectedApartment} 
@@ -66,7 +63,7 @@ const MainApp: React.FC = () => {
           <ApartmentTypesSection onSelectApartment={setSelectedApartment} />
           <AmenitiesSection />
           <AvailabilityTable />
-          <ContactSection onOpenModal={() => setIsContactModalOpen(true)} />
+          <ContactSection />
         </main>
         <Footer />
       </div>
