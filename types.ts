@@ -8,8 +8,9 @@ export interface ApartmentType {
 
 export interface AvailabilityUnit {
     unit: string;
+    floor: number;
     rooms: string;
     area: number;
-    parking: number;
+    parking: string | number;
     price: string;
 }

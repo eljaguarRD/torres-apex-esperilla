@@ -4,23 +4,25 @@ import type { AvailabilityUnit } from "../types";
 const units: AvailabilityUnit[] = [
   {
     unit: "A5",
+    floor: 5,
     rooms: "3 + Estudio",
     area: 165,
     parking: 2,
     price: "$416,000",
   },
-  { unit: "B5", rooms: "2", area: 102, parking: 2, price: "$263,000" },
-  { unit: "C5", rooms: "2", area: 93, parking: 2, price: "$243,000" },
+  { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$263,000" },
+  { unit: "C5", floor: 5, rooms: "2", area: 93, parking: "2L", price: "$243,000" },
   {
     unit: "D5",
+    floor: 5,
     rooms: "2 + Estudio",
     area: 121,
     parking: 2,
     price: "$330,000",
   },
-  { unit: "E5", rooms: "3", area: 127, parking: 2, price: "$332,000" },
-  { unit: "F5", rooms: "2", area: 105, parking: 2, price: "$278,000" },
-  { unit: "G5", rooms: "3", area: 155, parking: 2, price: "$370,000" },
+  { unit: "E5", floor: 5, rooms: "3", area: 127, parking: 2, price: "$332,000" },
+  { unit: "F13", floor: 13, rooms: "2", area: 105, parking: 2, price: "$312,500" },
+  { unit: "G5", floor: 5, rooms: "3", area: 155, parking: 2, price: "$370,000" },
 ];
 
 const AvailabilityTable: React.FC = () => {
@@ -36,7 +38,7 @@ const AvailabilityTable: React.FC = () => {
             <table className="w-full text-left">
               <thead className="border-b border-white/20">
                 <tr>
-                  {["APTO.", "Habs.", "Área Neta mts2", "Parqs", "Precio"].map(
+                  {["UNIDAD", "PISO", "HABITACIONES", "AREA NETA MT2", "NO. PARQUEOS", "PRECIO"].map(
                     (header) => (
                       <th
                         key={header}
@@ -58,6 +60,9 @@ const AvailabilityTable: React.FC = () => {
                   >
                     <td className="p-4 font-bold text-white text-base md:text-lg">
                       {unit.unit}
+                    </td>
+                    <td className="p-4 text-gray-300 text-base md:text-lg">
+                      {unit.floor}
                     </td>
                     <td className="p-4 text-gray-300 text-base md:text-lg">
                       {unit.rooms}
@@ -89,7 +94,13 @@ const AvailabilityTable: React.FC = () => {
                 <h3 className="text-xl font-bold text-white">{`APTO. ${unit.unit}`}</h3>
                 <p className="text-xl font-bold text-[#F97316]">{unit.price}</p>
               </div>
-              <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                <div>
+                  <p className="text-xs text-white/80 uppercase font-semibold">
+                    Piso
+                  </p>
+                  <p className="font-medium text-gray-200 mt-1">{unit.floor}</p>
+                </div>
                 <div>
                   <p className="text-xs text-white/80 uppercase font-semibold">
                     Habs.
