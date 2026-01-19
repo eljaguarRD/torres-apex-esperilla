@@ -22,7 +22,7 @@ const units: AvailabilityUnit[] = [
   },
   { unit: "E5", floor: 5, rooms: "3", area: 127, parking: 2, price: "$332,000" },
   { unit: "F13", floor: 13, rooms: "2", area: 105, parking: 2, price: "$312,500" },
-  { unit: "G5", floor: 5, rooms: "3", area: 155, parking: 2, price: "$370,000" },
+  { unit: "G5", floor: 5, rooms: "3", area: 155, parking: 2, price: "$388,000" },
 ];
 
 const AvailabilityTable: React.FC = () => {
