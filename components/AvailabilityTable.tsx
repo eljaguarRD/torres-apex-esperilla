@@ -8,7 +8,7 @@ const units: AvailabilityUnit[] = [
     rooms: "3 + Estudio",
     area: 165,
     parking: 2,
-    price: "$416,000",
+    price: "$436,000",
   },
   { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$263,000" },
   { unit: "C5", floor: 5, rooms: "2", area: 93, parking: "2L", price: "$243,000" },
@@ -54,9 +54,8 @@ const AvailabilityTable: React.FC = () => {
                 {units.map((unit, index) => (
                   <tr
                     key={unit.unit}
-                    className={`border-b border-white/10 ${
-                      index === units.length - 1 ? "border-none" : ""
-                    }`}
+                    className={`border-b border-white/10 ${index === units.length - 1 ? "border-none" : ""
+                      }`}
                   >
                     <td className="p-4 font-bold text-white text-base md:text-lg">
                       {unit.unit}

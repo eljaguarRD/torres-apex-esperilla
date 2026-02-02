@@ -7,7 +7,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'A',
     size: '165 m²',
-    price: 'Desde US$416,000',
+    price: 'Desde US$436,000',
     features: [
       '3 habitaciones',
       '3.5 baños',
@@ -110,7 +110,7 @@ interface ApartmentTypesSectionProps {
   onSelectApartment: (apartment: ApartmentType) => void;
 }
 
-const ApartmentTypesSection: React.FC<ApartmentTypesSectionProps> = ({ onSelectApartment }) => {
+const ApartmentTypesSection = ({ onSelectApartment }: ApartmentTypesSectionProps) => {
   return (
     <section id="types">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#F97316] font-sans">Tipos de Apartamentos</h2>
