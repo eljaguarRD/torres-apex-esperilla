@@ -62,7 +62,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'E',
     size: '127 m²',
-    price: 'US$334,000',
+    price: 'US$344,000',
     features: [
       '3 habitaciones',
       '2.5 baños',
