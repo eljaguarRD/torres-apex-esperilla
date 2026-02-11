@@ -41,7 +41,7 @@ const apartmentTypes: ApartmentType[] = [
       'Cocina',
       'Balcón',
       'Área de lavado'
-    ],
+   ],
   },
   {
     type: 'D',
