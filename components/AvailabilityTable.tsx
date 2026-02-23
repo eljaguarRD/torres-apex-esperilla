@@ -10,7 +10,7 @@ const units: AvailabilityUnit[] = [
     parking: 2,
     price: "$436,000",
   },
-  { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$263,000" },
+  { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$270,000" },
   { unit: "C5", floor: 5, rooms: "2", area: 93, parking: "2L", price: "$243,000" },
   {
     unit: "D5",

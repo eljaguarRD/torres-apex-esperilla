@@ -23,7 +23,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'B',
     size: '102 m²',
-    price: 'Desde US$263,000',
+    price: 'Desde US$270,000',
     features: [
       '2 habitaciones', '2 baños', 'Sala', 'Comedor', 'Cocina',
       'Balcón', 'Área de lavado', 'Cuarto de servicio con baño'
@@ -41,7 +41,7 @@ const apartmentTypes: ApartmentType[] = [
       'Cocina',
       'Balcón',
       'Área de lavado'
-   ],
+    ],
   },
   {
     type: 'D',
