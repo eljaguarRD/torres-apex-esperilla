@@ -85,11 +85,12 @@ const AmenitiesSection: React.FC = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-fade-in-scale"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in-scale"
           onClick={() => setSelectedImage(null)}
         >
+          {/* X always fixed to top-right of the viewport */}
           <button 
-            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white bg-black/50 hover:bg-black/80 rounded-full w-12 h-12 flex items-center justify-center text-3xl transition-colors z-10"
+            className="fixed top-4 right-4 text-white/70 hover:text-white bg-black/60 hover:bg-black/90 rounded-full w-11 h-11 flex items-center justify-center text-2xl transition-colors z-[110] shadow-lg"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(null);
@@ -98,12 +99,14 @@ const AmenitiesSection: React.FC = () => {
           >
             &times;
           </button>
-          <img 
-            src={selectedImage} 
-            alt="Amenidad ampliada" 
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10"
-            onClick={(e) => e.stopPropagation()} 
-          />
+          {/* Image constrained to viewport with padding so X is always visible */}
+          <div className="flex items-center justify-center w-full h-full p-14 pt-16" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={selectedImage} 
+              alt="Amenidad ampliada" 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-white/10"
+            />
+          </div>
         </div>
       )}
 
