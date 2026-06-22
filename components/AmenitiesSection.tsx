@@ -3,27 +3,27 @@ import React, { useState } from 'react';
 const amenitiesData = [
   {
     title: 'Piscina Recreativa & Carril de Natación',
-    image: '/images/AS%20V1%20Apex%202%20Final.jpg',
+    image: '/images/AS%20V1%20Apex%202%20Final.webp',
     className: 'md:col-span-2 md:row-span-2'
   },
   {
     title: 'Indoor Gym Profesional',
-    image: '/images/Gym%20Apex%202%20Final.jpg',
+    image: '/images/Gym%20Apex%202%20Final.webp',
     className: 'md:col-span-1 md:row-span-1'
   },
   {
     title: 'Lounge Equipado & Terraza',
-    image: '/images/Lounge%20Apex%202%20Final.jpg',
+    image: '/images/Lounge%20Apex%202%20Final.webp',
     className: 'md:col-span-1 md:row-span-1'
   },
   {
     title: 'Kids Playground',
-    image: '/images/Area%20Infantil%20Apex%202%20Final.jpg',
+    image: '/images/Area%20Infantil%20Apex%202%20Final.webp',
     className: 'md:col-span-1 md:row-span-1'
   },
   {
     title: 'Serenity Space & Recovery Area',
-    image: '/images/AS%20V2%20Apex%202%20Final.jpg',
+    image: '/images/AS%20V2%20Apex%202%20Final.webp',
     className: 'md:col-span-1 md:row-span-1'
   }
 ];

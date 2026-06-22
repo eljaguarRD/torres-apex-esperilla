@@ -2,11 +2,11 @@ import React from 'react';
 import ImageCarousel from './ImageCarousel';
 
 const galleryImages = [
-    { src: '/images/Sala%20Apto%20C%20Apex%20II%20Final.jpg', alt: 'Interior de un apartamento modelo mostrando la sala de estar moderna.' },
-    { src: '/images/Cocina%20Apex%20II%20Final.jpg', alt: 'Cocina de diseño con acabados de alta calidad y concepto abierto.' },
-    { src: '/images/Hab%20Apex%20II%20Final.jpg', alt: 'Dormitorio principal espacioso y luminoso con vistas a la ciudad.' },
-    { src: '/images/Sala%20Apto%20D%20Apex%20II%20Final.jpg', alt: 'Acabados de lujo y diseño minimalista en áreas comunes.' },
-    { src: '/images/Sala%20Apto%20E%20Apex%20II%20Final.jpg', alt: 'Sala familiar con iluminación natural.' },
+    { src: '/images/Sala%20Apto%20C%20Apex%20II%20Final.webp', alt: 'Interior de un apartamento modelo mostrando la sala de estar moderna.' },
+    { src: '/images/Cocina%20Apex%20II%20Final.webp', alt: 'Cocina de diseño con acabados de alta calidad y concepto abierto.' },
+    { src: '/images/Hab%20Apex%20II%20Final.webp', alt: 'Dormitorio principal espacioso y luminoso con vistas a la ciudad.' },
+    { src: '/images/Sala%20Apto%20D%20Apex%20II%20Final.webp', alt: 'Acabados de lujo y diseño minimalista en áreas comunes.' },
+    { src: '/images/Sala%20Apto%20E%20Apex%20II%20Final.webp', alt: 'Sala familiar con iluminación natural.' },
 ];
 
 const LocationSection: React.FC = () => {

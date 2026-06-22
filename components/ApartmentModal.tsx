@@ -39,9 +39,9 @@ const ApartmentModal: React.FC<ApartmentModalProps> = ({ apartment, onClose }) =
         {/* Left Side: Images */}
         <div className="lg:w-3/5 relative bg-black flex-shrink-0 overflow-y-auto max-h-[50vh] lg:max-h-none custom-scrollbar">
           <div className="flex flex-col">
-            <img src={apartment.image} alt={`Render Interior Tipo ${apartment.type}`} className="w-full object-cover" />
+            <img src={apartment.image} alt={`Render Interior Tipo ${apartment.type}`} className="w-full object-cover" loading="lazy" />
             <div className="bg-white p-4">
-              <img src={apartment.planImage} alt={`Planta Tipo ${apartment.type}`} className="w-full object-contain" />
+              <img src={apartment.planImage} alt={`Planta Tipo ${apartment.type}`} className="w-full object-contain" loading="lazy" />
             </div>
           </div>
         </div>

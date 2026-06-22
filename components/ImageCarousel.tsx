@@ -46,6 +46,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               src={image.src}
               alt={image.alt}
               className="w-full h-full object-cover"
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>

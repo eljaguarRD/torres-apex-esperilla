@@ -7,7 +7,7 @@ const Header: React.FC = () => {
             <div 
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform scale-105 animate-slow-zoom"
                 style={{
-                    backgroundImage: "url('/images/Apex%20V1.jpg')",
+                    backgroundImage: "url('/images/Apex%20V1.webp')",
                     backgroundPosition: "center bottom",
                 }}
             ></div>

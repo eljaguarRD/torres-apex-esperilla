@@ -19,8 +19,8 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Cocina%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-A.jpg'
+    image: '/images/Cocina%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-A.webp'
   },
   {
     type: 'B',
@@ -30,8 +30,8 @@ const apartmentTypes: ApartmentType[] = [
       '2 habitaciones', '2 baños', 'Sala', 'Comedor', 'Cocina',
       'Balcón', 'Área de lavado', 'Cuarto de servicio con baño'
     ],
-    image: '/images/Sala%20Apto%20B%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-B.jpg'
+    image: '/images/Sala%20Apto%20B%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-B.webp'
   },
   {
     type: 'C',
@@ -46,8 +46,8 @@ const apartmentTypes: ApartmentType[] = [
       'Balcón',
       'Área de lavado'
     ],
-    image: '/images/Sala%20Apto%20C%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-C.jpg'
+    image: '/images/Sala%20Apto%20C%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-C.webp'
   },
   {
     type: 'D',
@@ -64,8 +64,8 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Sala%20Apto%20D%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-D.jpg'
+    image: '/images/Sala%20Apto%20D%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-D.webp'
   },
   {
     type: 'E',
@@ -81,8 +81,8 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Sala%20Apto%20E%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-E.jpg'
+    image: '/images/Sala%20Apto%20E%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-E.webp'
   },
   {
     type: 'F',
@@ -98,8 +98,8 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Sala%20Apto%20F%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-F.jpg'
+    image: '/images/Sala%20Apto%20F%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-F.webp'
   },
   {
     type: 'G',
@@ -115,8 +115,8 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Hab%20Apex%20II%20Final.jpg',
-    planImage: '/images/Planta%20Tipo%20Apex-G.jpg'
+    image: '/images/Hab%20Apex%20II%20Final.webp',
+    planImage: '/images/Planta%20Tipo%20Apex-G.webp'
   },
 ];
 
