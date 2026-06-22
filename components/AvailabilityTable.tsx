@@ -31,7 +31,7 @@ const AvailabilityTable: React.FC = () => {
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#F97316] font-sans">
         Disponibilidad
       </h2>
-      <div className="bg-[#F97316]/10 rounded-3xl p-4 md:p-8 shadow-2xl backdrop-blur-sm border border-orange-500/20">
+      <div className="bg-[#0c1839]/60 rounded-3xl p-4 md:p-8 shadow-2xl backdrop-blur-md border border-white/10">
         {/* Desktop Table View */}
         <div className="hidden md:block">
           <div className="overflow-x-auto">

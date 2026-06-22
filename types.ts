@@ -4,6 +4,8 @@ export interface ApartmentType {
   size: string;
   price: string;
   features: string[];
+  image: string;
+  planImage: string;
 }
 
 export interface AvailabilityUnit {
