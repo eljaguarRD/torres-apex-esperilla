@@ -34,23 +34,30 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   return (
     <div className="relative w-full aspect-[4/5] md:aspect-[4/3] group" role="region" aria-label="Image carousel">
       <div className="relative h-full rounded-lg overflow-hidden bg-black/50">
-        {images.map((image, index) => (
+        {images.map((image, index) => {
+          const isActive = index === currentIndex;
+          const isNext = index === (currentIndex + 1) % images.length;
+          // Only render img src for active + next slide (preload next, skip rest)
+          const shouldLoad = isActive || isNext;
+          return (
           <div
             key={index}
             className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-              index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'
+              isActive ? 'opacity-100 z-10' : 'opacity-0'
             }`}
-            aria-hidden={index !== currentIndex}
+            aria-hidden={!isActive}
           >
             <img
-              src={image.src}
+              src={shouldLoad ? image.src : undefined}
               alt={image.alt}
               className="w-full h-full object-cover"
               loading={index === 0 ? 'eager' : 'lazy'}
+              decoding={index === 0 ? 'sync' : 'async'}
             />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
-        ))}
+          );
+        })}
       </div>
       
       {/* Left Arrow */}
