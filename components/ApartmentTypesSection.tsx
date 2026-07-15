@@ -19,7 +19,7 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Cocina%20Apex%20II%20Final.webp',
+    image: '/images/Sala%20Apto%20A%20Apex%20II%20Final.webp',
     planImage: '/images/Planta%20Tipo%20Apex-A.webp'
   },
   {
@@ -115,7 +115,7 @@ const apartmentTypes: ApartmentType[] = [
       'Área de lavado',
       'Cuarto de servicio con baño'
     ],
-    image: '/images/Hab%20Apex%20II%20Final.webp',
+    image: '/images/Sala%20Apto%20G%20Apex%20II%20Final.webp',
     planImage: '/images/Planta%20Tipo%20Apex-G.webp'
   },
 ];

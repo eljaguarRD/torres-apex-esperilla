@@ -11,3 +11,5 @@
 [2026-07-14] Bloqueo de scroll en Lightbox: Se bloqueó el scroll del body del navegador al abrir el modal de imágenes ampliadas de áreas sociales en AmenitiesSection.tsx para evitar la barra de scroll y el movimiento del fondo.
 
 [2026-07-14] Refactorización de Lightbox: Se movió el renderizado del lightbox modal de amenidades a App.tsx (raíz) para evitar el bug de desaparición de la imagen provocado por transformaciones CSS del contenedor principal.
+
+[2026-07-14] Actualización de renders (Tipo A y G): Se recibieron los renders actualizados para el Tipo A y Tipo G. Se convirtieron a formato WebP optimizado y se guardaron en public/images/ como Sala Apto A Apex II Final.webp y Sala Apto G Apex II Final.webp, actualizando sus referencias en ApartmentTypesSection.tsx.
