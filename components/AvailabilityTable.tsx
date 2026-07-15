@@ -8,9 +8,9 @@ const units: AvailabilityUnit[] = [
     rooms: "3 + Estudio",
     area: 165,
     parking: 2,
-    price: "$436,000",
+    price: "$416,000",
   },
-  { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$270,000" },
+  { unit: "B5", floor: 5, rooms: "2", area: 102, parking: "2L", price: "$263,000" },
   { unit: "C5", floor: 5, rooms: "2", area: 93, parking: "2L", price: "$243,000" },
   {
     unit: "D5",
@@ -21,8 +21,8 @@ const units: AvailabilityUnit[] = [
     price: "$330,000",
   },
   { unit: "E5", floor: 5, rooms: "3", area: 127, parking: 2, price: "$344,000" },
-  { unit: "F9", floor: 9, rooms: "2", area: 105, parking: 2, price: "$299,000" },
-  { unit: "G5", floor: 5, rooms: "3", area: 155, parking: 2, price: "$388,000" },
+  { unit: "F9", floor: 9, rooms: "2", area: 105, parking: 2, price: "$283,500" },
+  { unit: "G5", floor: 5, rooms: "3", area: 155, parking: 2, price: "$379,000" },
 ];
 
 const AvailabilityTable: React.FC = () => {

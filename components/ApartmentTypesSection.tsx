@@ -7,7 +7,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'A',
     size: '165 m²',
-    price: 'Desde US$436,000',
+    price: 'Desde US$416,000',
     features: [
       '3 habitaciones',
       '3.5 baños',
@@ -25,7 +25,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'B',
     size: '102 m²',
-    price: 'Desde US$270,000',
+    price: 'Desde US$263,000',
     features: [
       '2 habitaciones', '2 baños', 'Sala', 'Comedor', 'Cocina',
       'Balcón', 'Área de lavado', 'Cuarto de servicio con baño'
@@ -52,7 +52,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'D',
     size: '121 m²',
-    price: 'US$330,000',
+    price: 'Desde US$330,000',
     features: [
       '2 habitaciones',
       '2.5 baños',
@@ -70,7 +70,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'E',
     size: '127 m²',
-    price: 'US$344,000',
+    price: 'Desde US$344,000',
     features: [
       '3 habitaciones',
       '2.5 baños',
@@ -87,7 +87,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'F',
     size: '105 m²',
-    price: 'US$299,000',
+    price: 'Desde US$283,500',
     features: [
       '2 habitaciones',
       '2.5 baños',
@@ -104,7 +104,7 @@ const apartmentTypes: ApartmentType[] = [
   {
     type: 'G',
     size: '155 m²',
-    price: 'US$388,000',
+    price: 'Desde US$379,000',
     features: [
       '3 habitaciones',
       '3.5 baños',
