@@ -31,7 +31,7 @@ const amenitiesData = [
 const AmenitiesSection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Close modal with Escape key
+  // Close modal with Escape key and block body scroll
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -40,9 +40,13 @@ const AmenitiesSection: React.FC = () => {
     };
     if (selectedImage) {
       window.addEventListener('keydown', handleEsc);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
     return () => {
       window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
     };
   }, [selectedImage]);
 
