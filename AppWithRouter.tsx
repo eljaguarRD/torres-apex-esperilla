@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -16,18 +17,28 @@ import type { ApartmentType } from './types';
 const MainApp: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [selectedApartment, setSelectedApartment] = React.useState<ApartmentType | null>(null);
+  const [selectedAmenityImage, setSelectedAmenityImage] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    const isModalOpen = !!selectedApartment;
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedApartment(null);
+        setSelectedAmenityImage(null);
+      }
+    };
+
+    const isModalOpen = !!selectedApartment || !!selectedAmenityImage;
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleEsc);
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleEsc);
     };
-  }, [selectedApartment]);
+  }, [selectedApartment, selectedAmenityImage]);
 
   return (
     <div className="bg-[#0c1839] text-white font-sans overflow-x-hidden relative">
@@ -50,18 +61,58 @@ const MainApp: React.FC = () => {
       </div>
       <MenuButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
       <SideMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      
       {selectedApartment && (
         <ApartmentModal 
           apartment={selectedApartment} 
           onClose={() => setSelectedApartment(null)} 
         />
       )}
+
+      {/* Amenity Lightbox Modal */}
+      {selectedAmenityImage && (
+        <div 
+          className="fixed inset-0 z-[150] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-fade-in-scale overflow-hidden"
+          onClick={() => setSelectedAmenityImage(null)}
+        >
+          {/* X fixed to top-right of the viewport */}
+          <button 
+            className="fixed top-4 right-4 text-white/70 hover:text-white bg-black/60 hover:bg-black/90 rounded-full w-11 h-11 flex items-center justify-center text-2xl transition-colors z-[160] shadow-lg"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedAmenityImage(null);
+            }}
+            aria-label="Cerrar"
+          >
+            &times;
+          </button>
+          
+          {/* Image responsive using Tailwind max-w and max-h without calc inline bugs */}
+          <img 
+            src={selectedAmenityImage} 
+            alt="Amenidad ampliada" 
+            className="rounded-lg shadow-2xl border border-white/10 max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          
+          <style>{`
+            @keyframes fade-in-scale {
+              from { opacity: 0; transform: scale(0.95); }
+              to { opacity: 1; transform: scale(1); }
+            }
+            .animate-fade-in-scale {
+              animation: fade-in-scale 0.2s ease-out forwards;
+            }
+          `}</style>
+        </div>
+      )}
+
       <div className={`relative z-10 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-72' : 'translate-x-0'}`} style={{ willChange: 'transform' }}>
         <Header />
         <main className="container mx-auto px-6 py-12 md:py-16 space-y-16 md:space-y-24">
           <LocationSection />
           <ApartmentTypesSection onSelectApartment={setSelectedApartment} />
-          <AmenitiesSection />
+          <AmenitiesSection onSelectImage={setSelectedAmenityImage} />
           <AvailabilityTable />
           <ContactSection />
         </main>

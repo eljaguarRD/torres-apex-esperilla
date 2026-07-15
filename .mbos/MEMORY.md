@@ -9,3 +9,5 @@
 [2026-07-14] Actualización de precios: Se actualizaron los precios de las tipologías A, B, D, E, F y G en ApartmentTypesSection.tsx y de las unidades A5, B5, F9 y G5 en AvailabilityTable.tsx según la tabla de precios provista.
 
 [2026-07-14] Bloqueo de scroll en Lightbox: Se bloqueó el scroll del body del navegador al abrir el modal de imágenes ampliadas de áreas sociales en AmenitiesSection.tsx para evitar la barra de scroll y el movimiento del fondo.
+
+[2026-07-14] Refactorización de Lightbox: Se movió el renderizado del lightbox modal de amenidades a App.tsx (raíz) para evitar el bug de desaparición de la imagen provocado por transformaciones CSS del contenedor principal.

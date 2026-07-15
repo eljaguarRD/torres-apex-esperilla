@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const amenitiesData = [
   {
@@ -28,28 +28,11 @@ const amenitiesData = [
   }
 ];
 
-const AmenitiesSection: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+interface AmenitiesSectionProps {
+  onSelectImage: (image: string) => void;
+}
 
-  // Close modal with Escape key and block body scroll
-  React.useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setSelectedImage(null);
-      }
-    };
-    if (selectedImage) {
-      window.addEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      window.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = '';
-    };
-  }, [selectedImage]);
-
+const AmenitiesSection: React.FC<AmenitiesSectionProps> = ({ onSelectImage }) => {
   return (
     <section id="amenities" className="py-12">
       <div className="text-center mb-12">
@@ -63,11 +46,11 @@ const AmenitiesSection: React.FC = () => {
         {amenitiesData.map((item, index) => (
           <div 
             key={index} 
-            onClick={() => setSelectedImage(item.image)}
+            onClick={() => onSelectImage(item.image)}
             className={`relative rounded-2xl overflow-hidden group shadow-lg cursor-pointer ${item.className}`}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedImage(item.image)}
+            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onSelectImage(item.image)}
             aria-label={`Ver imagen de ${item.title}`}
           >
             <div 
@@ -85,44 +68,6 @@ const AmenitiesSection: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in-scale overflow-hidden"
-          onClick={() => setSelectedImage(null)}
-        >
-          {/* X always fixed to top-right of the viewport */}
-          <button 
-            className="fixed top-4 right-4 text-white/70 hover:text-white bg-black/60 hover:bg-black/90 rounded-full w-11 h-11 flex items-center justify-center text-2xl transition-colors z-[110] shadow-lg"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedImage(null);
-            }}
-            aria-label="Cerrar"
-          >
-            &times;
-          </button>
-          {/* Image hard-capped to viewport minus space for the X button */}
-          <img 
-            src={selectedImage} 
-            alt="Amenidad ampliada" 
-            className="rounded-lg shadow-2xl border border-white/10 object-contain"
-            style={{ maxWidth: 'calc(100vw - 48px)', maxHeight: 'calc(100vh - 80px)' }}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
-
-      <style>{`
-        @keyframes fade-in-scale {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        .animate-fade-in-scale {
-          animation: fade-in-scale 0.2s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 };
